@@ -10,7 +10,7 @@
     <cc:interface>
         <cc:attribute
             name="bean"
-            type="sv.edu.occ.ues.ingenieria.prn335.parqueowebapp.boundary.jsf.AbstractFrm"
+            type="sv.edu.ues.occ.ingenieria.prn335.parqueo.parqueowebapp.app.boundary.jsf.AbstractFrm"
             required="true"
             shortDescription="Bean que maneja las funcionalidades de TipoReserva."
         />
@@ -28,7 +28,7 @@
             <p:commandButton value="Guardar" 
                              actionListener="#{cc.attrs.bean.btnGuardarHandler}"
                              update="@form #{cc.attrs.refrescar}"
-                             rendered="#{cc.attrs.bean.estado=='NUEVO'}"/>
+                             rendered="#{not empty cc.attrs.bean.registro}"/>
 
             <p:commandButton value="Modificar" 
                              rendered="#{cc.attrs.bean.estado=='MODIFICAR'}"

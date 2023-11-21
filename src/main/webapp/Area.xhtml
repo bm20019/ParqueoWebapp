@@ -4,9 +4,11 @@
              xmlns:h="http://xmlns.jcp.org/jsf/html"
              xmlns:f="http://xmlns.jcp.org/jsf/core"
              xmlns:p="http://primefaces.org/ui"
-             xmlns:btt="http://xmlns.jcp.org/jsf/composite/btnparq">
+             xmlns:btt="http://xmlns.jcp.org/jsf/composite/btnparq"
+             xmlns:btnparq="jakarta.faces.composite/btnparq">
 
     <define name="tabla">
+        <h:panelGroup id="pnlTree">
         <h:form>
             <p:tree value="#{frmArea.raiz}" var="nodo" dynamic="true"
                     selectionMode="single"
@@ -18,8 +20,9 @@
                 </p:treeNode>
             </p:tree>
             <btt:botonesTop id="btnTop" bean="#{frmArea}" refrescar="@form :pnlDetalle"/>
+            
         </h:form>
-
+        </h:panelGroup>
     </define>
 
 
@@ -36,13 +39,28 @@
                             <p:outputLabel id="lblDescripcion"  value="Descripcion" for="txtDescripcion"/>
                             <p:inputTextarea id="txtDescripcion" value="#{frmArea.registro.descripcion}" cols="75" rows="3"/>
                         </h:panelGrid>
+                               <p:commandButton value="Guardar" 
+                                         actionListener="#{frmArea.btnGuardarHandler}"
+                                         update="@form :pnlTree"
+                                         rendered="#{frmArea.estado=='NUEVO'}"
+                                         />
+                                         <p:commandButton value="Modificar" 
+                                         actionListener="#{frmArea.btnModificarHandler}"
+                                         update="@form :pnlTree"
+                                         rendered="#{frmArea.estado=='MODIFICAR'}"
+                                         />
+                                         <p:commandButton value="Eliminar" 
+                                         actionListener="#{frmArea.btnEliminarHandler}"
+                                         update="@form :pnlTree"
+                                         rendered="#{frmArea.estado=='MODIFICAR'}"
+                                         />
                     </h:form>
 
-
+                   
                 </p:tab>
                 
                 
-                <p:tab closable="false" title="Espacios" disabled="#{frmArea.estado!='MODIFICAR'}">
+                <p:tab id="tabEspacio" closable="false" title="Espacios" disabled="#{frmArea.estado!='MODIFICAR'}">
 
                     <h:form id="frmTblEspacio">
                         <p:dataTable 
@@ -78,11 +96,11 @@
                             <btt:botonesTop bean="#{frmArea.frmEspacio}" refrescar=":tabDetalle:pnlDetalleEspacio @form"/>
 
                         </p:dataTable>
-
-                    </h:form>
+ >
+                    
                     
                     <h:panelGrid id="pnlDetalleEspacio">
-                        <h:form id="frmDetalleEspacio" rendered="#{not empty frmArea.frmEspacio.registro}">
+                        
                             <h:panelGrid columns="2">
                                 <h:outputLabel for="txtIdEspacio" value="ID"/>
                                 <h:inputText id="txtIdEspacio" value="#{frmArea.frmEspacio.registro.idEspacio}"
@@ -90,8 +108,23 @@
                                 <p:outputLabel for="txtNombreEspacio" value="Nombre"/>
                                 <p:inputText id="txtNombreEspacio" value="#{frmArea.frmEspacio.registro.nombre}" size="70"/>
                                 
+                                
                             </h:panelGrid>
-                            
+                                         <p:commandButton value="Guardar" 
+                                         actionListener="#{frmArea.frmEspacio.btnGuardarHandler}"
+                                         update=":pnlDetalle:tabDetalle:tabEspacio"
+                                  
+                                         />
+                                         <p:commandButton value="Modificar" 
+                                          actionListener="#{frmArea.frmEspacio.btnModificarHandler}"
+                                         update=":pnlDetalle:tabDetalle:tabEspacio"
+                                
+                                         />
+                                         <p:commandButton value="Eliminar" 
+                                          actionListener="#{frmArea.frmEspacio.btnEliminarHandler}"
+                                         update=":pnlDetalle:tabDetalle:tabEspacio"
+                        
+                                         />
                             
                         </h:form>
                         
