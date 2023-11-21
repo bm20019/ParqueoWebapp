@@ -93,14 +93,14 @@
                                 <h:outputText value="#{re.activo?'ACTIVO':'INACTIVO'}"/>
 
                             </p:column>
-                            <btt:botonesTop bean="#{frmArea.frmEspacio}" refrescar=":tabDetalle:pnlDetalleEspacio @form"/>
+                            <btt:botonesTop bean="#{frmArea.frmEspacio}" refrescar="@form"/>
 
                         </p:dataTable>
  >
-                    
+                    </h:form>
                     
                     <h:panelGrid id="pnlDetalleEspacio">
-                        
+                        <h:form id="frmDetalleEspacio" rendered="#{not empty frmArea.frmEspacio.registro}">
                             <h:panelGrid columns="2">
                                 <h:outputLabel for="txtIdEspacio" value="ID"/>
                                 <h:inputText id="txtIdEspacio" value="#{frmArea.frmEspacio.registro.idEspacio}"
