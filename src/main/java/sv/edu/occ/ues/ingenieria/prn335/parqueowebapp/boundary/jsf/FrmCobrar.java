@@ -16,7 +16,7 @@ import sv.edu.occ.ues.ingenieria.prn335.parqueowebapp.boundary.ws.NotificadorEsp
 
 /**
  *
- * @author alexo
+ * @author home
  */
 @Named
 @ViewScoped

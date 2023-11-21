@@ -20,7 +20,7 @@ import sv.edu.occ.ues.ingenieria.prn335.parqueowebapp.app.control.EspacioBean;
 
 /**
  *
- * @author alexo
+ * @author home
  */
 @Named
 @Dependent

@@ -6,7 +6,7 @@ package sv.edu.occ.ues.ingenieria.prn335.parqueowebapp.boundary.jsf;
 
 /**
  *
- * @author alexo
+ * @author home
  */
 public enum EstadosCRUD {
     

@@ -22,7 +22,7 @@ import sv.edu.occ.ues.ingenieria.prn335.parqueowebapp.app.control.TipoEspacioBea
 
 /**
  *
- * @author alexo
+ * @author home
  */
 @Path("tipo_espacio_async")
 public class TipoEspacioAsyncResource implements Serializable {

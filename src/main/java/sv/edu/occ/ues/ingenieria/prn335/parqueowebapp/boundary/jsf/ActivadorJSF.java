@@ -8,7 +8,7 @@ import jakarta.faces.annotation.FacesConfig;
 
 /**
  *
- * @author alexo
+ * @author home
  */
 @FacesConfig()
 public class ActivadorJSF {

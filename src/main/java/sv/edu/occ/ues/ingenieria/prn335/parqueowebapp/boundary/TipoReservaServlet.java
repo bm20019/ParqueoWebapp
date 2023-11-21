@@ -19,7 +19,7 @@ import sv.edu.occ.ues.ingenieria.prn335.parqueowebapp.app.control.TipoReservaBea
 
 /**
  *
- * @author alexo
+ * @author home
  */
 @WebServlet(name = "TipoReservaServlet", urlPatterns = {"/TipoReservaServlet"})
 public class TipoReservaServlet extends HttpServlet {

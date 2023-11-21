@@ -21,7 +21,7 @@ import sv.edu.occ.ues.ingenieria.prn335.parqueowebapp.app.control.AbstractDataAc
 
 /**
  *
- * @author alexo
+ * @author home
  */
 public abstract class AbstractFrm<T> implements Serializable {
 

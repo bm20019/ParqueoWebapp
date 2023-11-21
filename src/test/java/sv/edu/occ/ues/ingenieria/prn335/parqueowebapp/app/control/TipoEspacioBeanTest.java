@@ -38,7 +38,7 @@ import sv.edu.occ.ues.ingenieria.prn335.parqueowebapp.app.entity.TipoEspacio;
 
 /**
  *
- * @author alexo
+ * @author home
  */
 public class TipoEspacioBeanTest {
 

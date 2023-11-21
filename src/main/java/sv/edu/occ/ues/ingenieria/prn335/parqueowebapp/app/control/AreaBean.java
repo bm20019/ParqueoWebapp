@@ -17,7 +17,7 @@ import sv.edu.occ.ues.ingenieria.prn335.parqueowebapp.app.entity.Area;
 
 /**
  *
- * @author alexo
+ * @author home
  */
 @Stateless
 @LocalBean

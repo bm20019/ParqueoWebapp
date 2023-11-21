@@ -21,7 +21,7 @@ import sv.edu.occ.ues.ingenieria.prn335.parqueowebapp.app.control.AreaBean;
 
 /**
  *
- * @author alexo
+ * @author home
  */
 @Named
 @ViewScoped

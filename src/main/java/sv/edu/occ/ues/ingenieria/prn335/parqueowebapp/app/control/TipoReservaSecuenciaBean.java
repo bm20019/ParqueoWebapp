@@ -16,7 +16,7 @@ import sv.edu.occ.ues.ingenieria.prn335.parqueowebapp.app.entity.TipoReservaSecu
 
 /**
  *
- * @author alexo
+ * @author home
  */
 @Stateless
 @LocalBean
