@@ -34,9 +34,9 @@ public class EspacioCaracteristicaBean extends AbstractDataAccess<EspacioCaracte
         super(EspacioCaracteristica.class);
     }
     
-    public List<EspacioCaracteristica> findEspacioCaracteristicasByEspacio(int espacioId) {
+    public List<EspacioCaracteristica> findEspacioCaracteristicasByEspacio(Long espacioId) {
         if (espacioId > 0 && em != null) {
-            Query query = em.createNamedQuery("EspacioCaracteristica.findByEspacio");
+            Query query = em.createNamedQuery("EspacioCaracteristica.findByIdEspacio");
             query.setParameter("idEspacio", espacioId);
             return query.getResultList();
         }

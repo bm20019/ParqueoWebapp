@@ -17,6 +17,8 @@ import sv.edu.ues.occ.ingenieria.prn335.parqueo.parqueowebapp.app.entity.Area;
 import sv.edu.ues.occ.ingenieria.prn335.parqueo.parqueowebapp.app.entity.Espacio;
 import sv.edu.ues.occ.ingenieria.prn335.parqueo.parqueowebapp.app.control.AbstractDataAccess;
 import sv.edu.ues.occ.ingenieria.prn335.parqueo.parqueowebapp.app.control.EspacioBean;
+import sv.edu.ues.occ.ingenieria.prn335.parqueo.parqueowebapp.app.control.EspacioCaracteristicaBean;
+import sv.edu.ues.occ.ingenieria.prn335.parqueo.parqueowebapp.app.entity.EspacioCaracteristica;
 
 /**
  *
@@ -30,8 +32,20 @@ public class FrmEspacio extends AbstractFrm<Espacio> implements Serializable {
     FacesContext fc;
     @Inject
     EspacioBean eBean;
+    @Inject
+    EspacioCaracteristicaBean ecBean;
     
+    List <EspacioCaracteristica> listbyEspacio; 
     
+    public List<EspacioCaracteristica> getListbyEspacio() {
+        listbyEspacio = ecBean.findEspacioCaracteristicasByEspacio(registro.getIdEspacio());
+        return listbyEspacio;
+    }
+
+    public void setListbyEspacio(List<EspacioCaracteristica> listbyEspacio) {
+        this.listbyEspacio = listbyEspacio;
+    }
+            
     Integer idArea;
 
     @Override

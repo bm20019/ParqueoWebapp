@@ -24,7 +24,9 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "espacio_caracteristica", catalog = "parqueo", schema = "public")
 @NamedQueries({
-    @NamedQuery(name = "EspacioCaracteristica.findAll", query = "SELECT e FROM EspacioCaracteristica e")})
+    @NamedQuery(name = "EspacioCaracteristica.findAll", query = "SELECT e FROM EspacioCaracteristica e"),
+    @NamedQuery(name = "EspacioCaracteristica.findByIdEspacio", query = "SELECT e FROM EspacioCaracteristica e WHERE e.idEspacio.idEspacio = :idEspacio")
+})
 public class EspacioCaracteristica implements Serializable {
 
     private static final long serialVersionUID = 1L;

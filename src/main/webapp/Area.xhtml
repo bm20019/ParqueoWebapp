@@ -93,10 +93,10 @@
                                 <h:outputText value="#{re.activo?'ACTIVO':'INACTIVO'}"/>
 
                             </p:column>
-                            <btt:botonesTop bean="#{frmArea.frmEspacio}" refrescar="@form"/>
+           
 
                         </p:dataTable>
- >
+                        <btnparq:botonesTop bean="#{frmArea.frmEspacio}" refrescar="@all"></btnparq:botonesTop>
                     </h:form>
                     
                     <h:panelGrid id="pnlDetalleEspacio">
@@ -112,23 +112,25 @@
                             </h:panelGrid>
                                          <p:commandButton value="Guardar" 
                                          actionListener="#{frmArea.frmEspacio.btnGuardarHandler}"
-                                         update=":pnlDetalle:tabDetalle:tabEspacio"
-                                  
+                                         update="@all"                                
+                                         rendered="#{frmArea.frmEspacio.estado=='NUEVO'}"
                                          />
                                          <p:commandButton value="Modificar" 
                                           actionListener="#{frmArea.frmEspacio.btnModificarHandler}"
-                                         update=":pnlDetalle:tabDetalle:tabEspacio"
-                                
+                                          update="@all"
+                                          rendered="#{frmArea.frmEspacio.estado=='MODIFICAR'}"
                                          />
                                          <p:commandButton value="Eliminar" 
                                           actionListener="#{frmArea.frmEspacio.btnEliminarHandler}"
-                                         update=":pnlDetalle:tabDetalle:tabEspacio"
+                                         update="@all"
+                                         rendered="#{frmArea.frmEspacio.estado=='MODIFICAR'}"
                         
                                          />
                             
                         </h:form>
                         
                     </h:panelGrid>
+                    
 
 
                 </p:tab>
