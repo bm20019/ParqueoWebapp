@@ -58,7 +58,6 @@
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
             <version>6.20.6</version>
-            <scope>provided</scope>
         </dependency>
         
         <dependency>

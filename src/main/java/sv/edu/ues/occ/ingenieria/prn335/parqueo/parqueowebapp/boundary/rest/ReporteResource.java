@@ -43,11 +43,11 @@ public class ReporteResource implements Serializable {
                 // URL urlreporte = getClass().getResource("/reportes/PRN335-2023/HolaMundo.jasper");
                 
                 // pathReporte = urlreporte.getPath();
-                pathReporte = "/reportes/PRN335-2023/PRN335-2023/HolaMundo.jasper";
+                pathReporte = "/reportes/PRN335_2023/HolaMundo.jasper";
                 parametros.put("FirmadoPor", "Rogelio Valiente");
                 break;
             case "area":
-                pathReporte = "/reportes/PRN335-2023/PRN335-2023/Area.jasper";
+                pathReporte = "/reportes/PRN335_2023/Area.jasper";
                 URL pathSubreportes = ReporteResource.class.getResource(pathReporte);
                 String pathSubreporteString = pathSubreportes.getPath();
                 parametros.put("PATH_SUBREPORTES", pathSubreporteString.substring(0, pathSubreporteString.lastIndexOf("/"))+"/");

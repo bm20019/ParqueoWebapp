@@ -30,9 +30,12 @@
             <supported-locale>en</supported-locale>
             <supported-locale>es</supported-locale>
         </locale-config>
+        
         <resource-bundle>
             <base-name>traducciones</base-name>
             <var>trad</var>
-        </resource-bundle> 
+            
+        </resource-bundle>
+        
     </application>
 </faces-config>
